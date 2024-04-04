@@ -106,7 +106,7 @@ drwxr-xr-x. 2 root root   118 Feb 28 05:23 terraform
 -rw-r--r--. 1 root root   180 Feb 27 17:39 terraform.tfstate
 -rw-r--r--. 1 root root   176 Feb 18 14:04 v
 drwxr-xr-x. 3 root root    91 Feb 28 05:23 yandex-cloud
-[root@rocky-master ~]# rsync -av --delete --checksum --exclude '.*' ~/ /tmp/backup
+
 ```
 
 
