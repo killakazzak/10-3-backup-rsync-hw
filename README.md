@@ -150,9 +150,6 @@ crontab -e
 ```
 Проверка
 
-```
-tail -f /var/log/messages'
-```
 ![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/0ad283dc-f1f4-431d-95e1-9bb46dbfb95b)
 
 ![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/5f92fa12-b5f2-489c-aeb8-bc9386fc5a30)
