@@ -169,6 +169,14 @@ crontab -e
 
 ### Решение Задание 3*
 
+```bash
+rsync -av --delete --checksum --exclude '.*' --bwlimit=128  ~/ root@10.159.86.73:/tmp/backup
+```
+
+Проверка
+
+![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/adab3043-4a50-417d-9e51-277801d58e1c)
+
 
 ---
 
