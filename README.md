@@ -153,7 +153,9 @@ crontab -e
 ```
 tail -f /var/log/messages'
 ```
-![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/d73df275-4fad-4a89-96ff-e3c81a83dbeb)
+![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/0ad283dc-f1f4-431d-95e1-9bb46dbfb95b)
+
+
 
 ---
 
