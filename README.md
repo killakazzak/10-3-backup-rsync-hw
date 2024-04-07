@@ -120,8 +120,40 @@ drwxr-xr-x. 3 root root    91 Feb 28 05:23 yandex-cloud
 - На проверку направить файл crontab и скриншот с результатом работы утилиты.
 
 ### Решение Задание 2
+Создаём скрипт на РК
+```
+vim backup.sh
+```
+```bash
+#!/bin/bash
+
+source_dir="/root/"
+target_dir="/tmp/backup/"
+
+rsync -av --delete "$source_dir" "$target_dir" > /dev/null  2>&1
 
 
+if [ $? -eq 0 ]; then
+    echo "Резервное копирование успешно завершено"
+else
+    echo "Ошибка при выполнении резервного копирования"
+fi
+```
+Установка прав на запуск
+```
+chmod +x backup.sh
+```
+Редактируем crontab
+```bash
+crontab -e
+0 0 * * * /backup.sh >> /var/log/messages 2>&1
+```
+Проверка
+
+```
+tail -f /var/log/messages'
+```
+![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/d73df275-4fad-4a89-96ff-e3c81a83dbeb)
 
 ---
 
