@@ -255,6 +255,9 @@ done
 
 ![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/39ad3d43-e289-4c64-a709-37dc8c02b2c6)
 
+Проверка восстановление и синхронизация файлов
+
+![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/a968899a-797a-4bf1-82f8-de993fb1db1f)
 
 
 
