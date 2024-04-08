@@ -237,6 +237,32 @@ while true; do
 done
 ```
 
+Проверка на ошибку (отсутсвуют бэкапы)
+
+![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/efd4666d-5b98-40e0-b40b-12ec025f04de)
+
+Создание бэкапа
+
+![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/7da79a85-a26d-4408-8639-8efa3880291e)
+
+Проверка создания бэкапа и удаление старых копий
+
+![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/9355b9d3-ccb4-4af9-98ec-e9e50d53d5ea)
+
+![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/352dcd94-78ef-4a22-ad65-d43b5b97ea22)
+
+Восстановление из бэкапа
+
+![image](https://github.com/killakazzak/10-3-backup-rsync-hw/assets/32342205/39ad3d43-e289-4c64-a709-37dc8c02b2c6)
+
+
+
+
+
+
+
+
+
 
 
 ------
