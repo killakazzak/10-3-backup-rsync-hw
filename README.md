@@ -187,4 +187,56 @@ rsync -av --delete --checksum --exclude '.*' --bwlimit=128  ~/ root@10.159.86.73
 - На проверку направьте скрипт и скриншоты, демонстрирующие его работу в различных сценариях.
 
 ### Решение Задание 4*
+
+```bash
+#!/bin/bash
+HOME_DIR=/root
+BACKUP_DIR=root@10.159.86.73:/root/backup_data
+TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+
+# Функция для выполнения инкрементного резервного копирования
+perform_backup() {
+                rsync -avzhHl /root/source_data $BACKUP_DIR/backup-$TIMESTAMP
+                ssh root@10.159.86.73 'cd /root/backup_data  && ls -t . | tail -n +6 | xargs rm -r'
+                echo "Резервное копирование завершено успешно!"
+
+}
+
+# Функция для восстановления данных из резервной копии
+restore_backup() {
+    # Получаем список доступных резервных копий
+    backups=$(ssh root@10.159.86.73 "ls -t /root/backup_data")
+
+    if [ -z "$backups" ]; then
+        echo "Нет доступных резервных копий."
+    else
+        echo "Доступные резервные копии:"
+        echo "$backups"
+        read -p "Выберите номер резервной копии для восстановления: " backup_number
+        rsync -av --delete $BACKUP_DIR/$backup_number/* $HOME_DIR
+        #scp -r $BACKUP_DIR/$backup_number/*  $HOME_DIR
+        echo "Восстановление данных завершено успешно!"
+    fi
+}
+
+# Основное меню скрипта
+while true; do
+    echo "1. Выполнить резервное копирование"
+    echo "2. Восстановить данные из резервной копии"
+    echo "3. Выйти"
+    read -p "Выберите опцию: " option
+
+    case $option in
+        1) perform_backup ;;
+        2) restore_backup ;;
+        3) exit ;;
+        *) echo "Некорректный выбор. Попробуйте снова." ;;
+    esac
+
+    echo
+done
+```
+
+
+
 ------
